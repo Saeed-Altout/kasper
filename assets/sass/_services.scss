@@ -1,0 +1,51 @@
+/*------------------ Start Services ---------------------*/
+.services {
+    .services-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: 40px;
+
+        .srv-box {
+            @include flex(space-between, center, 0);
+
+            i {
+                font-size: rem(30);
+                color: $color-icon;
+            }
+
+            .text {
+                margin-left: rem(20);
+
+                h3 {
+                    margin-bottom: rem(12);
+                    color: $color-dark;
+                }
+
+                p {
+                    color: $color-gray;
+                    line-height: 2;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .services {
+        .services-content {
+            .srv-box {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: rem(20);
+                align-items: center;
+
+                i {
+                    font-size: rem(50);
+                    margin-bottom: rem(40);
+                }
+            }
+        }
+    }
+}
+
+/*------------------ End Services ---------------------*/

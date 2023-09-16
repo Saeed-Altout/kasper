@@ -1,0 +1,97 @@
+/*------------------ Start Contact ---------------------*/
+.contact {
+    .content {
+        min-width: 100%;
+        @include flex(space-between, start, 0);
+
+        form {
+            flex: 70% 0 0;
+
+            & input[type=text],
+            & input[type=email],
+            & textarea {
+                width: 100%;
+                display: block;
+                padding: rem(15) rem(20);
+                border: rem(1) solid $bg-gray;
+                margin-bottom: rem(30);
+            }
+
+            textarea {
+                resize: both;
+                height: rem(200);
+            }
+
+            input[type=submit] {
+                background-color: $bg-primary;
+                color: $color-light;
+                padding: rem(15) rem(30);
+                border-radius: rem(6);
+                border: none;
+                display: flex;
+                margin-left: auto;
+                cursor: pointer;
+            }
+        }
+
+        .info {
+            flex: 25% 0 0;
+
+            h4 {
+                font-weight: normal;
+                color: $color-dark;
+                margin-bottom: rem(20);
+                text-transform: uppercase;
+
+                &:nth-of-type(2) {
+                    margin-top: rem(80);
+                }
+            }
+
+            .phone {
+                display: block;
+                color: $color-gray;
+                margin-bottom: rem(10);
+            }
+
+            address {
+                line-height: 2;
+                color: $color-gray;
+            }
+        }
+    }
+}
+
+/* Small */
+@media (max-width:768px) {
+    .contact {
+        .content {
+            align-items: center;
+            flex-direction: column;
+
+            form {
+                width: 100%;
+
+                input[type=submit] {
+                    margin: auto;
+                }
+            }
+
+            .info {
+                order: -1;
+                text-align: center;
+                margin-bottom: rem(50);
+
+                h4:nth-of-type(2) {
+                    margin-top: rem(20);
+                }
+
+                address {
+                    margin-bottom: rem(30);
+                }
+            }
+        }
+    }
+}
+
+/*------------------ End Contact ---------------------*/

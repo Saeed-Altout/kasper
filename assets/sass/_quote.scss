@@ -1,0 +1,28 @@
+/*------------------ Start Quote ---------------------*/
+.quote {
+    background-image: url(/assets/images/design.jpg);
+    background-size: cover;
+    text-align: center;
+    color: $color-light;
+
+    .container {
+        position: relative;
+        @include flex(space-between, center, 0);
+        flex-direction: column;
+
+        q {
+            font-size: rem(17);
+            font-weight: normal;
+            line-height: 2;
+        }
+
+        span {
+            color: $color-primary;
+            font-size: rem(13);
+            font-weight: bold;
+            margin-top: rem(30);
+        }
+    }
+}
+
+/*------------------ End Quote ---------------------*/

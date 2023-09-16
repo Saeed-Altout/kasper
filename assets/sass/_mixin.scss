@@ -1,0 +1,36 @@
+@function rem($value) {
+    $remValue : $value;
+
+    @if(type-of($value)==number) {
+        $remValue : ($value/16) + rem;
+    }
+
+    @return $remValue;
+}
+
+@mixin flex($justify: center, $align: center, $gab: 10) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: rem($gab);
+}
+
+
+%center-object-v {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%center-object-h {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+%center-object {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

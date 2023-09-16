@@ -1,0 +1,98 @@
+/*------------------ Start Skils ---------------------*/
+.our-skils {
+    .container {
+        @include flex(space-between, center, 0);
+        flex-wrap: wrap;
+
+        &>div>h3 {
+            font-size: rem(25);
+            font-weight: normal;
+            margin-bottom: rem(20);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        &>div>p {
+            font-size: rem(15);
+            font-weight: normal;
+            line-height: 2;
+            color: $color-gray;
+            text-align: center;
+            margin-bottom: rem(60);
+        }
+
+        & .testimonials {
+            .content {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin-right: 40px;
+                    margin-bottom: 40px;
+                }
+
+                .text {
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 2;
+                    color: #777;
+                    margin-bottom: 30px;
+                    border-bottom: 1px solid #ccc;
+
+                    p {
+                        text-align: right;
+                        font-weight: normal;
+                        margin: 10px 0;
+                    }
+                }
+
+
+            }
+
+            .bullets {
+                span {
+                    border: solid 1px #0c1f25;
+
+                    &.active {
+
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Medium */
+@media(min-width: 992px) {
+    .our-skils {
+        .container {
+            &>div {
+                flex-basis: 45%;
+            }
+        }
+    }
+}
+
+/* Small */
+@media(max-width: 768px) {
+    .our-skils {
+        .container {
+            .testimonials {
+                .content {
+                    flex-direction: column;
+                    text-align: center;
+
+                    img {
+                        margin: 0 auto 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*------------------ End Skils ---------------------*/

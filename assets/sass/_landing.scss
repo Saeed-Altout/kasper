@@ -1,0 +1,66 @@
+/*------------------ Start Landing ---------------------*/
+.landing {
+    height: 100vh;
+    position: relative;
+    background-color: $bg-dark;
+    background: url('/assets/images/landing.jpg') center;
+    background-size: cover;
+
+    .text {
+        @extend %center-object-v;
+        @include flex(end, center, 0);
+        padding: calc($primary-padding / 2);
+        background-color: $bg-light;
+        color: $color-light;
+        width: 60%;
+
+        .content {
+            max-width: rem(520);
+
+            h2 {
+                font-weight: normal;
+                font-size: rem(32);
+            }
+
+            p {
+                font-weight: normal;
+                margin-top: rem(20);
+                font-size: rem(14);
+                line-height: 2;
+            }
+        }
+    }
+
+    .change-background {
+        @extend %center-object-v;
+        color: #fff;
+    }
+
+    .arrow-left {
+        left: 15px;
+    }
+
+    .arrow-right {
+        right: 15px;
+    }
+}
+
+/* Small */
+@media(max-width: 768px) {
+    .landing {
+        .text {
+            width: 100%;
+
+            .content {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        .change-background {
+            display: none;
+        }
+    }
+}
+
+/*------------------ End Landing ---------------------*/

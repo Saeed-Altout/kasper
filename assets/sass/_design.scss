@@ -1,0 +1,65 @@
+/*------------------ Start Design ---------------------*/
+.design {
+    min-height: 600px;
+    background-image: url(/assets/images/design.jpg);
+    background-size: cover;
+    overflow: hidden;
+    @include flex(space-between, center, 0);
+
+    & .image,
+    & .text {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+    }
+
+    & .image {
+        text-align: center;
+
+        img {
+            position: relative;
+            bottom: rem(-160)
+        }
+    }
+
+    & .text {
+        padding: calc($primary-padding / 2);
+        color: $color-light;
+        background-color: $bg-light;
+
+        h2 {
+            font-weight: normal;
+            text-transform: uppercase;
+            margin-bottom: rem(20);
+        }
+
+        ul {
+            li {
+                padding: rem(20) 0;
+
+                &::before {
+                    font-family: 'Font Awesome 5 Free';
+                    content: "\e4e5";
+                    font-size: rem(25);
+                    margin-right: rem(15);
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}
+
+/* Small */
+@media(max-width: 768px) {
+    .design {
+        .text {
+            width: 100%;
+        }
+
+        .image {
+            display: none;
+        }
+    }
+}
+
+/*------------------ End Design ---------------------*/

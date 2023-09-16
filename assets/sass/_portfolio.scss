@@ -1,0 +1,87 @@
+/*------------------ Start Portfolio ---------------------*/
+.portfolio {
+    .images-container {
+        @include flex(center, center, 10);
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .box {
+            position: relative;
+            max-width: rem(450);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                transition: $transition;
+                cursor: pointer;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.2) rotate(-5deg);
+
+                    &:hover {
+                        &+.caption {
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .caption {
+                position: absolute;
+                background-color: $bg-lighter;
+                padding: rem(20);
+                bottom: -100%;
+                width: 100%;
+                transition: $transition;
+
+                h4 {
+                    font-weight: normal;
+                    color: $color-dark;
+                }
+
+                p {
+                    font-weight: normal;
+                    line-height: 2;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+/* Small */
+@media(min-width: 768px) {
+    .portfolio {
+        .images-container {
+            .box {
+                flex: 92% 0 0;
+            }
+        }
+    }
+}
+
+/* Medium */
+@media(min-width: 992px) {
+    .portfolio {
+        .images-container {
+            .box {
+                flex: 46% 0 0;
+            }
+        }
+    }
+}
+
+/* Large */
+@media(min-width: 1200px) {
+    .portfolio {
+        .images-container {
+            .box {
+                flex: 23% 0 0;
+            }
+        }
+    }
+}
+
+/*------------------ End Portfolio ---------------------*/

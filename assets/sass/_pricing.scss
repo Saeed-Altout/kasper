@@ -1,0 +1,78 @@
+/*------------------ Start Pricing ---------------------*/
+.pricing {
+    .plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: rem(40);
+
+        .plan {
+            background-color: $bg-lighter;
+            text-align: center;
+
+            .head {
+                padding: rem(40) rem(20);
+                border-top: rem(1)solid $bg-primary;
+                border-bottom: rem(1)solid $bg-primary;
+
+                span {
+                    text-transform: uppercase;
+                    font-weight: normal;
+                    margin-bottom: rem(20);
+                    display: block;
+                }
+
+                h3 {
+                    color: $color-primary;
+                    font-size: rem(60);
+                    font-weight: normal;
+
+                    &::before,
+                    &::after {
+                        font-size: 20px;
+                        position: relative;
+                    }
+
+                    &::before {
+                        content: '$';
+                        top: -35px;
+                    }
+
+                    &::after {
+                        content: '/Mo';
+                        right: -12px;
+                    }
+                }
+            }
+
+            ul {
+                border-bottom: rem(1)solid $bg-primary;
+
+                li {
+                    padding: rem(20);
+
+                    &:not(:last-child) {
+                        position: relative;
+                    }
+
+                    &:not(:last-child)::after {
+                        content: '';
+                        position: absolute;
+                        @extend %center-object-h;
+                        background-color: $bg-primary;
+                        width: rem(120);
+                        height: rem(1);
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-text {
+        text-align: center;
+        margin: rem(40) auto;
+        font-size: rem(18);
+    }
+}
+
+/*------------------ End Pricing ---------------------*/

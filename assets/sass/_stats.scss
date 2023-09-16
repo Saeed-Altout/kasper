@@ -1,0 +1,79 @@
+/*------------------ Start Stats ---------------------*/
+.stats {
+    background-image: url(/assets/images/design.jpg);
+    background-size: cover;
+
+    .container {
+        position: relative;
+        @include flex(center, center, 0);
+
+        .box {
+            @include flex(center, center, 0);
+            flex-direction: column;
+            line-height: 2;
+            padding: calc($primary-padding / 2);
+            background-color: $bg-light;
+            min-height: 300px;
+
+            i {
+                @include flex(center, center, 0);
+                font-size: rem(20);
+                height: rem(50);
+                width: rem(50);
+                border-radius: 50%;
+                color: $color-light;
+                background-color: $bg-primary;
+            }
+
+            p {
+                font-size: rem(14);
+                font-weight: normal;
+                color: $color-light;
+            }
+
+            .number {
+                font-size: rem(40);
+                font-weight: bold;
+                color: $color-light;
+            }
+        }
+    }
+}
+
+/* Small */
+@media(max-width: 768px) {
+    .stats {
+        .container {
+            flex-wrap: wrap;
+
+            .box {
+                margin-bottom: rem(40);
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+/* Small */
+@media(min-width: 768px) {
+    .stats {
+        .container {
+            .box {
+                flex-basis: 50%;
+            }
+        }
+    }
+}
+
+/* Medium */
+@media(min-width: 992px) {
+    .stats {
+        .container {
+            .box {
+                flex-basis: 25%;
+            }
+        }
+    }
+}
+
+/*------------------ End Stats ---------------------*/
